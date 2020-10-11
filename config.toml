@@ -2,3 +2,6 @@ baseURL = "http://www.heirbaut.nl/"
 languageCode = "en-us"
 title = "Niels' Homepage"
 theme = "ananke"
+
+[params]
+  featured_image = "/images/fernando-hernandez-JdoofvUDUwc-unsplash.jpg"
