@@ -265,7 +265,7 @@ if (dateTime < DateTime.Now)
     throw new ArgumentException($"Cannot create an event with a date in the past: {dateTime}", nameof(dateTime));
 ```
 
-This concludes the first part of the series. In the next part we will make a careful start with the application layer. This will probably mean extending the domain layer further.
+This concludes the first part of the series, we got as far as the first requirement, the next installments we will continue with the requirements for the domain model.
 
 All code so far can be found by creating a clone of the repository and then checking out the last for this article commit like this:
 
