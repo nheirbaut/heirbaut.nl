@@ -4,9 +4,9 @@ mainSections = ["posts"]
 
 autoSwitchAppearance = true
 
-defaultAppearance = "light"
-# One of: blowfish, fire, ocean, forest, etc. (theme-provided schemes)
-colorScheme = "blowfish"
+defaultAppearance = "dark"
+# One of: blowfish, avocado, fire, ocean, forest, github, one-light, etc.
+colorScheme = "ocean"
 
 enableSearch = true
 
