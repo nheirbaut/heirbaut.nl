@@ -19,7 +19,7 @@ enableCodeCopy = true
 
 [author]
   name = "Niels Heirbaut"
-  image = "/images/fernando-hernandez-JdoofvUDUwc-unsplash.jpg"
+  image = "images/fernando-hernandez-JdoofvUDUwc-unsplash.jpg"
   headline = "Blog"
   links = [
     { github = "https://github.com/nheirbaut/" },
