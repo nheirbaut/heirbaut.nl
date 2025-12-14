@@ -1,0 +1,24 @@
+{
+  "name": "heirbaut.nl (Hugo + Blowfish, no Node)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "HUGO_ENV": "development"
+  },
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo server"
+    }
+  },
+  "postCreateCommand": "hugo version && go version && htmltest --version || true",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.eol": "\n"
+      }
+    }
+  }
+}

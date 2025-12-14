@@ -1,0 +1,11 @@
+Directory: "public"
+CheckExternal: false
+CheckInternalHash: true
+EnforceHTML5: true
+IgnoreDirectoryMissingTrailingSlash: true
+IgnoreSSLVerify: false
+IgnoreURLs:
+  - "http://localhost"
+  - "http://127.0.0.1"
+  - "https://localhost"
+  - "https://127.0.0.1"

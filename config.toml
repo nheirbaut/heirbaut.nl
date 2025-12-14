@@ -1,9 +1,3 @@
-baseURL = "http://www.heirbaut.nl/"
-languageCode = "en-us"
-title = "Niels' Homepage"
-theme = "ananke"
-
-[params]
-  featured_image = "/images/fernando-hernandez-JdoofvUDUwc-unsplash.jpg"
-    github = "https://github.com/nheirbaut/"
-    linkedin = "https://www.linkedin.com/in/nielsheirbaut/"
+# Deprecated.
+# This repository uses the Hugo config directory: config/_default/*.toml
+# Keeping this file (empty of settings) prevents accidental merges with legacy config.

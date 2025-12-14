@@ -1,0 +1,27 @@
+# Blowfish parameters (kept minimal; override via config/ and layouts/).
+
+mainSections = ["posts"]
+
+autoSwitchAppearance = true
+
+defaultAppearance = "light"
+# One of: blowfish, fire, ocean, forest, etc. (theme-provided schemes)
+colorScheme = "blowfish"
+
+enableSearch = true
+
+enableCodeCopy = true
+
+[homepage]
+  layout = "profile"
+  showRecent = true
+  recentLimit = 5
+
+[author]
+  name = "Niels Heirbaut"
+  image = "/images/fernando-hernandez-JdoofvUDUwc-unsplash.jpg"
+  headline = "Blog"
+  links = [
+    { github = "https://github.com/nheirbaut/" },
+    { linkedin = "https://www.linkedin.com/in/nielsheirbaut/" },
+  ]

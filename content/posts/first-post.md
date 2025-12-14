@@ -2,6 +2,8 @@
 title: "First Post!"
 date: 2018-07-10 18:36:41 +0200
 draft: false
+tags: ["meta", "blog"]
+categories: ["site"]
 ---
 
 For a while I have been contemplating to start writing again on this website, but I wanted to start using something that feels simpler to use to me than WordPress. In long forgotten days I used to use [NanoBlogger](https://nanoblogger.sourceforge.net/) and even [Blosxom](https://blosxom.sourceforge.net/). But these projects did not keep up with the times so I decided to start using [Jekyll](https://jekyllrb.com/).

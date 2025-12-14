@@ -7,9 +7,25 @@
 /resources/_gen/
 hugo_stats.json
 
+# Hugo cache/locks
+.hugo_build.lock
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+
+# Optional local env files
+.env
+
 # Executable may be added to repository
 hugo.exe
 hugo.darwin
 hugo.linux
+
+# Node (not used, but safe)
+node_modules/
 
 # End of https://www.toptal.com/developers/gitignore/api/hugo
