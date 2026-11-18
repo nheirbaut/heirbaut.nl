@@ -1,27 +1,17 @@
-# Blowfish parameters (kept minimal; override via config/ and layouts/).
+# Beautiful Hugo parameters (see the theme's configuration reference).
 
 mainSections = ["posts"]
 
-autoSwitchAppearance = true
+logo = "images/fernando-hernandez-JdoofvUDUwc-unsplash.jpg"
 
-defaultAppearance = "dark"
-# One of: blowfish, avocado, fire, ocean, forest, github, one-light, etc.
-colorScheme = "ocean"
+rss = true
 
-enableSearch = true
+selfHosted = true
 
-enableCodeCopy = true
-
-[homepage]
-  layout = "profile"
-  showRecent = true
-  recentLimit = 5
+[search]
+  provider = "fuse"
 
 [author]
   name = "Niels Heirbaut"
-  image = "images/fernando-hernandez-JdoofvUDUwc-unsplash.jpg"
-  headline = "Blog"
-  links = [
-    { github = "https://github.com/nheirbaut/" },
-    { linkedin = "https://www.linkedin.com/in/nielsheirbaut/" },
-  ]
+  github = "https://github.com/nheirbaut/"
+  linkedin = "https://www.linkedin.com/in/nielsheirbaut/"

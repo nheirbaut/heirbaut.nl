@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu-24.04
 
 ARG GO_VERSION=1.23.4
-ARG HUGO_VERSION=0.152.2
+ARG HUGO_VERSION=0.170.1
 ARG HTMLTEST_VERSION=0.17.0
 
 # Base utilities (no Node)
@@ -23,13 +23,13 @@ RUN curl -fsSL "https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz" -o 
 
 ENV PATH="/usr/local/go/bin:${PATH}"
 
-# Hugo extended (pinned + checksum verify)
+# Hugo (pinned + checksum verify)
 RUN curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt" -o /tmp/hugo_checksums.txt \
-  && curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" -o "/tmp/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" \
-  && grep "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" /tmp/hugo_checksums.txt > /tmp/hugo_sha256.txt \
+  && curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz" -o "/tmp/hugo_${HUGO_VERSION}_linux-amd64.tar.gz" \
+  && grep " hugo_${HUGO_VERSION}_linux-amd64.tar.gz$" /tmp/hugo_checksums.txt > /tmp/hugo_sha256.txt \
   && (cd /tmp && sha256sum -c /tmp/hugo_sha256.txt) \
-  && tar -C /usr/local/bin -xzf "/tmp/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" hugo \
-  && rm -f /tmp/hugo_checksums.txt "/tmp/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" /tmp/hugo_sha256.txt
+  && tar -C /usr/local/bin -xzf "/tmp/hugo_${HUGO_VERSION}_linux-amd64.tar.gz" hugo \
+  && rm -f /tmp/hugo_checksums.txt "/tmp/hugo_${HUGO_VERSION}_linux-amd64.tar.gz" /tmp/hugo_sha256.txt
 
 # htmltest (pinned)
 RUN curl -fsSL "https://github.com/wjdp/htmltest/releases/download/v${HTMLTEST_VERSION}/htmltest_${HTMLTEST_VERSION}_linux_amd64.tar.gz" -o /tmp/htmltest.tgz \

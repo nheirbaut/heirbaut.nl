@@ -18,7 +18,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  HUGO_VERSION: "0.152.2"
+  HUGO_VERSION: "0.170.1"
   GO_VERSION: "1.23.4"
 
 jobs:
@@ -45,16 +45,16 @@ jobs:
           echo "/usr/local/go/bin" >> "$GITHUB_PATH"
           go version
 
-      - name: Install Hugo extended (pinned)
+      - name: Install Hugo (pinned)
         shell: bash
         run: |
           set -euo pipefail
           curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_checksums.txt" -o /tmp/hugo_checksums.txt
-          curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" -o "/tmp/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
-          grep "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" /tmp/hugo_checksums.txt > /tmp/hugo_sha256.txt
+          curl -fsSL "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.tar.gz" -o "/tmp/hugo_${HUGO_VERSION}_linux-amd64.tar.gz"
+          grep " hugo_${HUGO_VERSION}_linux-amd64.tar.gz$" /tmp/hugo_checksums.txt > /tmp/hugo_sha256.txt
           (cd /tmp && sha256sum -c /tmp/hugo_sha256.txt)
-          sudo tar -C /usr/local/bin -xzf "/tmp/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" hugo
-          rm -f /tmp/hugo_checksums.txt "/tmp/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz" /tmp/hugo_sha256.txt
+          sudo tar -C /usr/local/bin -xzf "/tmp/hugo_${HUGO_VERSION}_linux-amd64.tar.gz" hugo
+          rm -f /tmp/hugo_checksums.txt "/tmp/hugo_${HUGO_VERSION}_linux-amd64.tar.gz" /tmp/hugo_sha256.txt
           hugo version
 
       - name: Build (Hugo)

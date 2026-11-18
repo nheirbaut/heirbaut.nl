@@ -1,6 +1,6 @@
 # heirbaut.nl
 
-Hugo (extended) blog met het Blowfish theme, gebouwd voor eenvoud, performance, toegankelijkheid en onderhoudbaarheid — en expliciet **zonder NodeJS** (zowel lokaal als in CI).
+Hugo blog met het [Beautiful Hugo theme](https://github.com/halogenica/beautifulhugo), geïntegreerd als Hugo module en **zonder NodeJS** (zowel lokaal als in CI).
 
 ## Prerequisites
 
@@ -19,22 +19,21 @@ In de repo root:
 - Start dev server: `hugo server --bind 0.0.0.0 --port 1313 --buildDrafts`
 - Open: `http://localhost:1313`
 
-## Theme integratie (Blowfish)
+## Theme integratie (Beautiful Hugo)
 
-We gebruiken **Hugo Modules** (Go modules) om Blowfish te integreren:
+We gebruiken **Hugo Modules** (Go modules) om Beautiful Hugo te integreren:
 
 - Geen theme fork
-- Updates zijn één regel in `go.mod`
+- De versie staat vast in `go.mod`; `go.sum` bevat de checksums
 - Overrides gebeuren via Hugo’s standaard lookup order in `layouts/`, `assets/`, `static/`
 
 Pinnen:
 
-- Blowfish is gepind in `go.mod` (`github.com/nunocoracao/blowfish/v2 v2.93.0`).
+- Beautiful Hugo is gepind in `go.mod` (`github.com/halogenica/beautifulhugo/v5 v5.2.1`).
+- De module wordt geïmporteerd in `config/_default/hugo.toml`.
+- Thema-instellingen en auteur/sociale links staan in `config/_default/params.toml`.
 
-Belangrijk (no Node):
-
-- Blowfish kan (optioneel) Tailwind CSS “from source” rebuilden met npm, maar dat is **niet nodig** voor normaal gebruik.
-- Met deze setup gebruiken we de **meegeleverde** compiled CSS/JS van Blowfish via Hugo Pipes.
+De site gebruikt de standaardopmaak en meegeleverde assets van Beautiful Hugo; een npm-build is niet nodig.
 
 ## Content
 
@@ -79,12 +78,14 @@ We gebruiken `htmltest` (Go binary, geen Node):
    - `hugo --minify`
    - `htmltest`
 
-### Blowfish
+### Beautiful Hugo
 
-1. Update versie in `go.mod` (bijv. naar een nieuwe tag).
-2. In de devcontainer:
-   - `hugo mod tidy`
-   - `hugo --minify`
+In de devcontainer, met de gewenste versie in plaats van `v5.2.1`:
+
+- `hugo mod get github.com/halogenica/beautifulhugo/v5@v5.2.1`
+- `hugo mod tidy`
+- `hugo --minify`
+- `htmltest`
 
 ## Rollback
 

@@ -4,10 +4,10 @@ defaultContentLanguage = "nl"
 
 title = "heirbaut.nl"
 
+enableRobotsTXT = true
+
 [pagination]
   pagerSize = 12
-
-enableRobotsTXT = true
 
 [taxonomies]
   tag = "tags"
@@ -18,9 +18,12 @@ enableRobotsTXT = true
 
 [module]
   [[module.imports]]
-    path = "github.com/nunocoracao/blowfish/v2"
+    path = "github.com/halogenica/beautifulhugo/v5"
 
 [markup]
+  [markup.highlight]
+    noClasses = false
+
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = false

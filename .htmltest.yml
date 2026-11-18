@@ -1,4 +1,4 @@
-Directory: "public"
+DirectoryPath: "public"
 CheckExternal: false
 CheckInternalHash: true
 EnforceHTML5: true
