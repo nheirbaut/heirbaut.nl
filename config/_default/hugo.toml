@@ -1,6 +1,6 @@
 baseURL = "https://www.heirbaut.nl/"
-languageCode = "nl"
-defaultContentLanguage = "nl"
+languageCode = "en"
+defaultContentLanguage = "en"
 
 title = "heirbaut.nl"
 
