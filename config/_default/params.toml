@@ -1,0 +1,17 @@
+# Beautiful Hugo parameters (see the theme's configuration reference).
+
+mainSections = ["posts"]
+
+logo = "images/fernando-hernandez-JdoofvUDUwc-unsplash.jpg"
+
+rss = true
+
+selfHosted = true
+
+[search]
+  provider = "fuse"
+
+[author]
+  name = "Niels Heirbaut"
+  github = "https://github.com/nheirbaut/"
+  linkedin = "https://www.linkedin.com/in/nielsheirbaut/"
